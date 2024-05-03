@@ -1,5 +1,10 @@
-runtime: static
+runtime: python39
+
 handlers:
-  - url: /.*
-    static_files: index.html
-    upload_directory: .
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
